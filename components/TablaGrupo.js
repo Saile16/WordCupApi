@@ -1,13 +1,23 @@
 import Link from "next/link";
 import React from "react";
-
+import Image from "next/image";
+import styles from "../styles/TablaGrupo.module.css";
 const TablaGrupo = ({ team }) => {
+  console.log(team);
   const { group } = team;
-  console.log(group);
+  // console.log(group);
   return (
     <div className="container">
-      <h2 className="group">Grupo {group}</h2>
-
+      <div className="group-title">
+        <h2 className="group">Grupo {group}</h2>
+        <Link
+          className="btnResultados"
+          href={`/grupos/${group}`}
+          onClick={() => console.log(team._id)}
+        >
+          Ver resultados
+        </Link>
+      </div>
       <table>
         <thead>
           <tr>
@@ -29,7 +39,10 @@ const TablaGrupo = ({ team }) => {
             <tr key={e.team_id}>
               <td>{i + 1}</td>
 
-              <td>{e.name_en}</td>
+              <td className="t-flex">
+                {e.name_en}
+                <Image src={e.flag} width={95} height={55} alt="country flag" />
+              </td>
               <td>{e.mp}</td>
               <td>{e.w}</td>
               <td>{e.d}</td>

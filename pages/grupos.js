@@ -1,23 +1,26 @@
+import React from "react";
 import Layout from "@/components/Layout";
 import TablaGrupo from "@/components/TablaGrupo";
 import Head from "next/head";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
-export default function Home({ responseMatches }) {
-  const [teams, setTeams] = useState();
-  const [groups, setGroups] = useState();
-
-  // const getGroups = responseMatches.data.map((g) => g.group);
-  // console.log(getGroups);
+const grupos = ({ responseMatches }) => {
   const { data } = responseMatches;
-  console.log(data);
-  console.log(data);
-  //console.log(responseMatches.data);
-  useEffect(() => {}, []);
+  return (
+    <Layout>
+      <div className="table-groups">
+        <h1 className="container">
+          Tabla de clasificaciones - Etapa de grupos
+        </h1>
+        {data.map((team) => (
+          <TablaGrupo key={team._id} team={team} />
+        ))}
+      </div>
+    </Layout>
+  );
+};
 
-  return <>test</>;
-}
+export default grupos;
 
 //reglas de next , llamar api del lado servidor
 export const getServerSideProps = async (context) => {
