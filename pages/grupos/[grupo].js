@@ -6,7 +6,7 @@ import CardResultados from "@/components/CardResultados";
 
 const GrupoResultado = ({ grupoSeleccionado }) => {
   const router = useRouter();
-  console.log(grupoSeleccionado);
+  // console.log(grupoSeleccionado);
   return (
     <Layout>
       <div className="container container-resultados">

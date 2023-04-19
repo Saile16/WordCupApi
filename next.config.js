@@ -9,6 +9,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/grupos",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

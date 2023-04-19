@@ -1,12 +1,5 @@
 /*TABLA*/
-.table-groups {
-  margin-top: 55px;
-  margin-bottom: 100px;
-}
-.table-groups h1 {
-  font-size: 55px;
-  text-align: center;
-}
+
 .group-title {
   display: flex;
   align-items: center;
@@ -34,7 +27,7 @@
   color: white;
   font-weight: 700;
 }
-table {
+.table {
   color: black;
   width: 100%;
   font-size: 20px;
@@ -46,12 +39,12 @@ table {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-thead {
+.thead {
   background: white;
   border-radius: 15px;
 }
 
-th {
+.thead th {
   padding: 20px 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -61,7 +54,7 @@ th {
   color: var(--blanco);
 }
 
-td {
+.tbody td {
   padding: 15px;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
 }
@@ -71,13 +64,13 @@ td {
   align-items: center;
   justify-content: center;
 }
-tbody tr {
+.tbody tr {
   cursor: pointer;
   background: white;
 }
-tr:nth-child(even) {
+.tr:nth-child(even) {
   background-color: #f8f6ff;
 }
-tbody tr:hover {
+.tbody tr:hover {
   background: rgba(227, 140, 200, 0.4);
 }

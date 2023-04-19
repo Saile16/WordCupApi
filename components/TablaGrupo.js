@@ -3,23 +3,23 @@ import React from "react";
 import Image from "next/image";
 import styles from "../styles/TablaGrupo.module.css";
 const TablaGrupo = ({ team }) => {
-  console.log(team);
+  // console.log(team);
   const { group } = team;
   // console.log(group);
   return (
     <div className="container">
-      <div className="group-title">
-        <h2 className="group">Grupo {group}</h2>
+      <div className={styles["group-title"]}>
+        <h2 className={styles.group}>Grupo {group}</h2>
         <Link
-          className="btnResultados"
+          className={styles.btnResultados}
           href={`/grupos/${group}`}
           onClick={() => console.log(team._id)}
         >
           Ver resultados
         </Link>
       </div>
-      <table>
-        <thead>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
           <tr>
             <th>#</th>
             <th>Selección</th>
@@ -34,12 +34,12 @@ const TablaGrupo = ({ team }) => {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className={styles.tbody}>
           {team.teams.map((e, i) => (
-            <tr key={e.team_id}>
+            <tr className={styles.tr} key={e.team_id}>
               <td>{i + 1}</td>
 
-              <td className="t-flex">
+              <td className={`t-flex ${styles.td}`}>
                 {e.name_en}
                 <Image src={e.flag} width={95} height={55} alt="country flag" />
               </td>

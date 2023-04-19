@@ -1,0 +1,34 @@
+/*HEADER*/
+.navegacion {
+  margin-top: 5rem;
+  display: flex;
+  gap: 2rem;
+}
+.navegacion a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem;
+
+  transition-duration: 0.3s;
+}
+.navegacion a:hover {
+  background-color: rgb(184, 124, 124);
+  border-radius: 15px;
+}
+
+.container-header {
+  background-image: linear-gradient(to right, rgb(0 0 0 /0.8), #98707d),
+    url(../public/img/bg-qatar.jpg);
+  background-size: cover;
+  background-position: 50%;
+  padding: 5rem 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+}
