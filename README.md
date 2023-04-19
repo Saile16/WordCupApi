@@ -8,12 +8,14 @@ Al ingresar al sitio web, se verá una pantalla de bienvenida con dos botones. E
 
 ## Tecnologías utilizadas
 
-Next.js
-API "free-api-worldcup2022"
-Instalación
-Clonar el repositorio: git clone
-Instalar las dependencias: npm install
-Ejecutar el proyecto: npm run dev
+- Next.js
+- API "free-api-worldcup2022"
+
+## Instalación
+
+- Clonar el repositorio: git clone
+- Instalar las dependencias: npm install
+- Ejecutar el proyecto: npm run dev
 
 ## Páginas
 

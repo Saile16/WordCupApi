@@ -3,17 +3,25 @@ import { useRouter } from "next/router";
 import React from "react";
 import Image from "next/image";
 import CardResultados from "@/components/CardResultados";
-
+import { motion } from "framer-motion";
 const GrupoResultado = ({ grupoSeleccionado }) => {
   const router = useRouter();
   // console.log(grupoSeleccionado);
   return (
     <Layout>
-      <div className="container container-resultados">
-        {grupoSeleccionado.map((groupResults) => (
-          <CardResultados key={groupResults._id} groupResults={groupResults} />
-        ))}
-      </div>
+      <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="container container-resultados">
+          {grupoSeleccionado.map((groupResults) => (
+            <CardResultados
+              key={groupResults._id}
+              groupResults={groupResults}
+            />
+          ))}
+        </div>
+      </motion.div>
     </Layout>
   );
 };

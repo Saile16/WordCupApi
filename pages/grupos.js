@@ -1,19 +1,24 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import TablaGrupo from "@/components/TablaGrupo";
-
+import { motion } from "framer-motion";
 const grupos = ({ responseMatches }) => {
   const { data } = responseMatches;
   return (
     <Layout>
-      <div className="table-groups">
-        <h1 className="container">
-          Tabla de clasificaciones - Etapa de grupos
-        </h1>
-        {data.map((team) => (
-          <TablaGrupo key={team._id} team={team} />
-        ))}
-      </div>
+      <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="table-groups">
+          <h1 className="container">
+            Tabla de clasificaciones - Etapa de grupos
+          </h1>
+          {data.map((team) => (
+            <TablaGrupo key={team._id} team={team} />
+          ))}
+        </div>
+      </motion.div>
     </Layout>
   );
 };

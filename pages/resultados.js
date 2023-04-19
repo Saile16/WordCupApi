@@ -1,18 +1,40 @@
 import CardResultados from "@/components/CardResultados";
 import Layout from "@/components/Layout";
 import React from "react";
-
-const GROUPS = ["A", "B", "C", "D", "E", "F", "G", "H"];
+import { motion } from "framer-motion";
+const GROUPS = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "R16",
+  "QR",
+  "semi",
+  "3RD",
+  "FIN",
+];
 const resultados = ({ responseMatches }) => {
   const { data } = responseMatches;
+  const gruposOrdenados = data.sort((a, b) => {
+    return GROUPS.indexOf(a.group) - GROUPS.indexOf(b.group);
+  });
 
   return (
     <Layout>
-      <div className="container container-resultados">
-        {data.map((groupResults) => (
-          <CardResultados groupResults={groupResults} />
-        ))}
-      </div>
+      <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="container container-resultados">
+          {gruposOrdenados.map((groupResults) => (
+            <CardResultados groupResults={groupResults} />
+          ))}
+        </div>
+      </motion.div>
     </Layout>
   );
 };

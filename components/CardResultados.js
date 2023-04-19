@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "../styles/CardResultados.module.css";
 const CardResultados = ({ groupResults }) => {
+  console.log(groupResults);
   return (
     <>
       <div className={styles.card}>
@@ -43,6 +44,14 @@ const CardResultados = ({ groupResults }) => {
             <p>
               <b>Marcador:</b> {groupResults.home_score} -{" "}
               {groupResults.away_score}{" "}
+            </p>
+            <p>
+              <b>Ganador: </b>
+              {groupResults.home_score == groupResults.away_score
+                ? "Empate"
+                : groupResults.home_score > groupResults.away_score
+                ? groupResults.home_team_en
+                : groupResults.away_team_en}
             </p>
             <div>
               <b>Goleadores:</b>{" "}
