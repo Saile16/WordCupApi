@@ -1,8 +1,8 @@
 import React from "react";
-
+import styles from "../styles/Footer.module.css";
 const Footer = () => {
   return (
-    <footer class="footer">
+    <footer className={styles.footer}>
       <p>
         <span>Alexander Lucano</span> &copy; 2023 - Todos los derechos
         reservados.
