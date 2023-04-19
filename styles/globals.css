@@ -127,3 +127,48 @@ tbody tr:hover {
   justify-content: space-between;
   margin: 2rem;
 }
+
+/**/
+.container-resultados {
+  margin-top: 35px;
+}
+.card {
+  background-color: white;
+  width: 380px;
+  height: 380px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  border: 1px solid black;
+  line-height: 1.8rem;
+}
+.card-group {
+  font-weight: bold;
+  font-size: 24px;
+}
+.card-img {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card-names {
+  font-size: 21px;
+}
+.card-span {
+  display: block;
+}
+.container-resultados {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
