@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import styles from "../styles/CardResultados.module.css";
 const CardResultados = ({ groupResults }) => {
-  console.log(groupResults);
   return (
     <>
       <div className={styles.card}>

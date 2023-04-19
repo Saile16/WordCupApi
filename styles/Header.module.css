@@ -2,18 +2,20 @@
 .navegacion {
   margin-top: 5rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 .navegacion a {
   color: var(--blanco);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.5rem;
-
   transition-duration: 0.3s;
 }
+
 .navegacion a:hover {
   background-color: rgb(184, 124, 124);
   border-radius: 15px;
@@ -28,7 +30,22 @@
 }
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin: 2rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  .navegacion {
+    display: flex;
+  }
+  .navegacion a {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
 }

@@ -17,7 +17,7 @@
   border: 1px solid rgb(255, 242, 242);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 15px;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 10px;
   outline: none;
 }
@@ -30,7 +30,7 @@
 .table {
   color: black;
   width: 100%;
-  font-size: 20px;
+  font-size: 10px;
   table-layout: fixed;
   border-collapse: collapse;
   border-radius: 35px;
@@ -64,6 +64,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .tbody tr {
   cursor: pointer;
   background: white;
@@ -73,4 +74,16 @@
 }
 .tbody tr:hover {
   background: rgba(227, 140, 200, 0.4);
+}
+
+@media (min-width: 800px) {
+  .btnResultados {
+    font-size: 20px;
+  }
+  .table {
+    font-size: 20px;
+  }
+}
+.d-img {
+  display: none;
 }

@@ -5,6 +5,7 @@ import styles from "../styles/TablaGrupo.module.css";
 const TablaGrupo = ({ team }) => {
   // console.log(team);
   const { group } = team;
+  team.teams.sort((a, b) => (a.pts > b.pts ? -1 : 1));
   // console.log(group);
   return (
     <div className="container">
@@ -35,25 +36,33 @@ const TablaGrupo = ({ team }) => {
         </thead>
 
         <tbody className={styles.tbody}>
-          {team.teams.map((e, i) => (
-            <tr className={styles.tr} key={e.team_id}>
-              <td>{i + 1}</td>
+          {team.teams.map((e, i) => {
+            return (
+              <tr className={styles.tr} key={e.team_id}>
+                <td>{i + 1}</td>
 
-              <td className={`t-flex ${styles.td}`}>
-                {e.name_en}
-                <Image src={e.flag} width={95} height={55} alt="country flag" />
-              </td>
-              <td>{e.mp}</td>
-              <td>{e.w}</td>
-              <td>{e.d}</td>
-              <td>{e.l}</td>
+                <td className={styles["t-flex"]}>
+                  <p>{e.name_en}</p>
+                  <Image
+                    src={e.flag}
+                    width={95}
+                    height={55}
+                    alt="country flag"
+                    className="d-img"
+                  />
+                </td>
+                <td>{e.mp}</td>
+                <td>{e.w}</td>
+                <td>{e.d}</td>
+                <td>{e.l}</td>
 
-              <td>{e.gf}</td>
-              <td>{e.ga}</td>
-              <td>{e.gd}</td>
-              <td>{e.pts}</td>
-            </tr>
-          ))}
+                <td>{e.gf}</td>
+                <td>{e.ga}</td>
+                <td>{e.gd}</td>
+                <td>{e.pts}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
